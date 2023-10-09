@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      .card-signin {
+        border-radius: 8px;
+        padding: 48px 24px 48px 24px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 400px;
+      }
+      .card-signin-tittle {
+        color: #000032;
+        font-family: "Work Sans", sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 41px;
+      }
+      .card-signin-input {
+        border-radius: 8px;
+        border: 1.5px solid #000032;
+        background: #fff;
+        margin-bottom: 24px;
+      }
+      .card-signin-button {
+        width: 100%;
+        background-color: #f6a973;
+        color: white;
+        border-radius: 8px;
+        height: 51px;
+        margin-bottom: 24px;
+      }
+      .card-signin-button:hover {
+        background-color: #f6a973;
+        color: white;
+      }
+      .card-signin-button-signup {
+        color: #f6a973;
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 24px;
+      }
+      .card-signin-button-signup:hover {
+        color: #f6a973;
+      }
+      .tittle-or {
+        color: #333;
+        /* Work Sans/20px: Medium */
+        font-family: Work Sans;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 24px;
+      }
+      .btn-social {
+        background: #f2f2f2;
+        border-radius: 4px;
+      }
+      .navbar-search-input {
+        width: 100%;
+        height: 48px;
+        border-radius: 24px;
+        border: 1.5px solid var(--brand-indigo-marine-000032, #000032);
+      }
+      .navbar-button-signin {
+        color: #f6a973;
+        text-decoration: none;
+        font-weight: 500;
+        min-width: 85px;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+      }
+      .card img {
+        border-radius: 8px;
+      }
+      .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 18px;
+      }
+      .card-body {
+        padding: 0px;
+        padding-top: 18px;
+      }
+      .card .card-body a {
+        border: 1.5px solid var(--brand-orange-orange-f-6-a-973, #f6a973);
+        border-radius: 24px;
+        padding: 8px 16px 8px 16px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000032;
+      }
+      .disc {
+        color: var(--brand-green-green-439-f-7-e, #439f7e);
+        /* Work Sans/16px: Medium */
+        font-family: Work Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: inline;
+        margin-left: 12px;
+      }
+      .rating {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f2f2f2;
+      }
+      .rating-title {
+        background: var(--white-white-05-f-2-f-2-f-2, #f2f2f2);
+        border-radius: 0;
+        padding: 15px 55.5px 15px 55.5px;
+        margin-top: 40px;
+        margin-bottom: 38px;
+        color: #ff8200;
+        text-decoration: none;
+      }
+      .rating-title-active {
+        border-bottom: 3px solid #ff8200;
+      }
+      .rating-title:hover {
+        color: #ff8200;
+      }
+      .star {
+        margin-top: 18px;
+        margin-bottom: 18px;
+      }
+      .star img {
+        width: 100px;
+        height: 16px;
+      }
+      .star span {
+        margin-left: 12px;
+        color: var(--white-white-40999999, #999);
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      .lates-produk p {
+        font-family: Work Sans;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            class="d-flex flex-row align-items-center"
+            style="gap: 32px; width: 100%"
+          >
+            <a class="navbar-brand" href="#">
+              <img
+                src="brand.png"
+                alt="brand"
+                style="width: auto; height: 49px"
+              />
+            </a>
+            <div class="input-group navbar-search-input">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search for anything"
+                aria-label="Search for anything"
+                aria-describedby="basic-addon2"
+                style="border: none; border-radius: 24px"
+              />
+              <span
+                style="
+                  background-color: transparent;
+                  border-radius: 24px;
+                  border: none;
+                "
+                class="input-group-text"
+                id="basic-addon2"
+                ><i class="bi bi-search"></i
+              ></span>
+            </div>
+            <button type="button" class="btn btn-link navbar-button-signin">
+              Sign in
+            </button>
+            <i class="bi bi-cart"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Menu Product Start -->
+    <!-- Menu Product End -->
+
+    <div class="produk mt-4">
+      <div class="container">
+        <!-- Product Start -->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/ps4.png" class="card-img-top" alt="ps4" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  PS4 OP Stick Bonus USB Charge Cable White
+                </h5>
+                <a href="#" class="btn">$25.87</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img
+                src="img/powerbank.png"
+                class="card-img-top"
+                alt="powerbank"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Hippo Ilo W2 Powerbank wireless 10000mah
+                </h5>
+                <a href="#" class="btn">$527.66</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/laptop.png" class="card-img-top" alt="laptop" />
+              <div class="card-body">
+                <h5 class="card-title">ASUS ExpertBook B1400CEAE-EK3424T</h5>
+                <a href="#" class="btn">$527.66</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img
+                src="img/samsunggalaxy.png"
+                class="card-img-top"
+                alt="samsunggalaxy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">SAMSUNG Galaxy A03</h5>
+                <a href="#" class="btn">$118.60</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/samsunglcdtv.png" class="card-img-top" alt="ps4" />
+              <div class="card-body">
+                <h5 class="card-title">SAMSUNG 32 Inch TV LED UA32T4003</h5>
+                <a href="#" class="btn">$188.55</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img
+                src="img/logitecmouse.png"
+                class="card-img-top"
+                alt="mouse"
+              />
+              <div class="card-body">
+                <h5 class="card-title">LOGITECH Pop Mouse</h5>
+                <a href="#" class="btn"
+                  >$24.29
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$24.98</span
+                  ></a
+                >
+                <p class="disc">disc.3%</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/acer.png" class="card-img-top" alt="acer" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  ACER All-In-One Aspire C24-1650 (Core i3-1115G4, 4GB, 1TB HDD,
+                  Win 11 Home)
+                </h5>
+                <a href="#" class="btn"
+                  >$577.20
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$589.33</span
+                  ></a
+                >
+                <p class="disc">disc.2%</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/tplink.png" class="card-img-top" alt="tplink" />
+              <div class="card-body">
+                <h5 class="card-title">TP-LINK Archer AX73 Router</h5>
+                <a href="#" class="btn"
+                  >$116.61
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$140.86</span
+                  ></a
+                >
+                <p class="disc">disc.17%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product End -->
+
+    <!-- Rating Product Strat -->
+    <div class="rating">
+      <div class="container">
+        <button type="button" class="btn rating-title rating-title-active">
+          Most popular items
+        </button>
+        <button type="button" class="btn rating-title">
+          Most trending items
+        </button>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/realmec.png" class="card-img-top" alt="realme" />
+              <div class="card-body">
+                <h5 class="card-title">Realme C20</h5>
+                <a href="#" class="btn"
+                  >$ 165
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$175</span
+                  ></a
+                >
+                <p class="disc">disc.5%</p>
+                <p class="star" style="margin-top: 18px">
+                  <img src="img/rate star.svg" alt="star" /><span
+                    >(10,270)</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/monitor.png" class="card-img-top" alt="monitor" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Monitor 24'' IPS Full HD 4 Side Virtually Borderless Design
+                </h5>
+                <a href="#" class="btn"
+                  >$ 240
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$265</span
+                  ></a
+                >
+                <p class="disc">disc.12%</p>
+                <p class="star" style="margin-top: 18px">
+                  <img src="img/rate star.svg" alt="star" /><span>(8,531)</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="card">
+              <img
+                src="img/externalcase.png"
+                class="card-img-top"
+                alt="externalcase"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  External Case HDD 2.5" USB 2.0 / Casing Hardisk Eksternal 2.5
+                  Inch
+                </h5>
+                <a href="#" class="btn"
+                  >$ 2
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                  ></span
+                ></a>
+                <p class="disc"></p>
+                <p class="star" style="margin-top: 18px">
+                  <img src="img/rate star.svg" alt="star" /><span>(8,531)</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="card">
+              <img
+                src="img/seagate2tb.png"
+                class="card-img-top"
+                alt="seagate2tb"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Seagate 2tb External Hard Drive</h5>
+                <a href="#" class="btn"
+                  >$ 55.72
+                  <span
+                    style="
+                      text-decoration: line-through #b3b3b3;
+                      color: var(--white-white-30-b-3-b-3-b-3, #b3b3b3);
+                      font-size: 11px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: normal;
+                    "
+                    >$65</span
+                  ></a
+                >
+                <p class="disc">disc.15%</p>
+                <p class="star" style="margin-top: 18px">
+                  <img src="img/rate star.svg" alt="star" /><span>(128)</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rating Product End -->
+
+    <!-- Lates Product Start -->
+    <div class="lates-produk mt-4">
+      <div class="container">
+        <p>Lates Product</p>
+        <div class="row">
+          <div class="col-sm-11">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="img/ps4.png" class="card-img-top" alt="ps4" />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      PS4 OP Stick Bonus USB Charge Cable White
+                    </h5>
+                    <a href="#" class="btn">$25.87</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="img/ps4.png" class="card-img-top" alt="ps4" />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      PS4 OP Stick Bonus USB Charge Cable White
+                    </h5>
+                    <a href="#" class="btn">$25.87</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="img/ps4.png" class="card-img-top" alt="ps4" />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      PS4 OP Stick Bonus USB Charge Cable White
+                    </h5>
+                    <a href="#" class="btn">$25.87</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="img/ps4.png" class="card-img-top" alt="ps4" />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      PS4 OP Stick Bonus USB Charge Cable White
+                    </h5>
+                    <a href="#" class="btn">$25.87</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-1"
+            style="padding-top: 150px; padding-bottom: 150px"
+          >
+            <div
+              class="arrow-circle"
+              style="
+                background-color: #b3b3b3;
+                border-radius: 24px;
+                width: 48px;
+                height: 48px;
+                padding: 12px 0 0 16px;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <a href="">
+                <i
+                  class="bi bi-arrow-right"
+                  style="width: 25px; height: 25px"
+                ></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Lates Product End -->
+
+    <!-- Modal Start -->
+    <div class="container mt-3">
+      <div class="card-signin d-flex flex-column">
+        <p class="card-signin-tittle">Sign In</p>
+        <form action="">
+          <div class="col-12 mb-3">
+            <input
+              type="email"
+              class="form-control form-control-lg card-signin-input"
+              id="exampleInput"
+              aria-describedby="emailHelp"
+              placeholder="hi@commerce.com"
+            />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn card-signin-button">
+              Sign In
+            </button>
+          </div>
+        </form>
+        <button type="button" class="btn btn-link card-signin-button-signup">
+          Sign Up
+        </button>
+        <div class="text-center tittle-or"><p>or</p></div>
+
+        <div class="d-flex flex-column gap-3">
+          <button type="button" class="btn btn-social">
+            <img src="google.svg" alt="" /> Continue with Google
+          </button>
+          <button type="button" class="btn btn-social">
+            <img src="facebook.svg" alt="" /> Continue with Facebook
+          </button>
+          <button type="button" class="btn btn-social">
+            <img src="apple.svg" alt="" /> Continue with Apple
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
+
+    <footer style="background-color: #000032">
+      <div class="container">
+        <div class="row" style="color: white;">
+          <div class="col-sm-3">
+            <p>APPLICATION</p>
+          </div>
+          <div class="col-sm-3">
+            <p>CHOMERCE</p>
+          </div>
+          <div class="col-sm-3">
+            <p>SERVICE INFORMATION</p>
+          </div>
+          <div class="col-sm-3">
+            <p>CUSTOMER SERVICE</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <img src="brand.png" alt="" style="width: 162px; height: 44px" />
+          </div>
+          <div class="col-sm-4" style="color: white">
+            <p>© 2022 All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
